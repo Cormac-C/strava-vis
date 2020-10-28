@@ -34,60 +34,66 @@ class DropdownSettings extends Component {
   _onSelect (option) {
     this.setState({selected: option})
     if (this.props.options === 'metric'){
-      switch(option.label){
-        case 'as far as':
-          this.metric = 'distance';
-          break;
-        case 'as high as':
-          this.metric = 'height';
-          break;
-        case 'as long as':
-          this.metric = 'time';
-          break;
-      }
+      this.metric = findMetric(option.label)
       this.props.updateMetric(this.metric)
-      console.log("Select")
     }
   }
 
   render () {
-    const defaultOption = this.state.selected
-    let newMetric = this.props.metric
-    //const placeHolderValue = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected.label
-    switch(this.props.options){
-      case 'activity':
-        this.state.optionSet = activityOptions;
-        break;
-      case 'metric':
-        this.state.optionSet = metricOptions;
-        break;
-      case 'constant':
-        console.log('constant metric', newMetric)
-        this.state.optionSet = distanceConstantOptions;
-        switch (newMetric) {
-          case 'distance':
-            console.log('check d')
-            this.state.optionSet = distanceConstantOptions;
-            break;
-          case 'height':
-            console.log('check h')
-            this.state.optionSet = heightConstantOptions;
-            break;
-          case 'time':
-            console.log('check t')
-            this.state.optionSet = timeConstantOptions;
-            break;
-        }
-        break;      
-    }
-
-
+    const newOptionSet = findOptionSet(this.props.options, this.props.metric)
+    const defaultOption = newOptionSet[0]
     return (
       <section>
-        <Dropdown options={this.state.optionSet} onChange={this._onSelect} value={defaultOption} placeholder={this.state.optionSet[0]} />
+        <Dropdown options={newOptionSet} onChange={this._onSelect} value={defaultOption} placeholder={newOptionSet[0] } />
       </section>
     )
   }
+}
+
+function findOptionSet(options, newMetric){
+  let newOptionSet = activityOptions;
+  switch(options){
+    case 'activity':
+      newOptionSet = activityOptions;
+      break;
+    case 'metric':
+      newOptionSet = metricOptions;
+      break;
+    case 'constant':
+      newOptionSet = distanceConstantOptions;
+      switch (newMetric) {
+        case 'distance':
+          newOptionSet = distanceConstantOptions;
+          break;
+        case 'height':
+          newOptionSet = heightConstantOptions;
+          break;
+        case 'time':
+          newOptionSet = timeConstantOptions;
+          break;
+        default:
+      }
+      break;  
+    default:    
+  }
+  return newOptionSet
+}
+
+function findMetric(label){
+  let newMetric;
+  switch(label){
+    case 'as far as':
+      newMetric = 'distance';
+      break;
+    case 'as high as':
+      newMetric = 'height';
+      break;
+    case 'as long as':
+      newMetric = 'time';
+      break;
+    default:
+  }
+  return newMetric;
 }
 
 export default DropdownSettings

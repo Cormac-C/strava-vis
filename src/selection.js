@@ -5,13 +5,11 @@ export default class Selection extends Component {
     constructor (props){
         super(props)
         this.state = {
-            //metric: 'distance'
+            metric: ''
         }
-        this.updateMetric = this.updateMetric
     }
 
     updateMetric = (metric) => {
-        // console.log('Update metric to ', metric)
         this.setState(state => ({metric}))
     };
 
