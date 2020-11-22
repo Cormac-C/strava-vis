@@ -43,7 +43,7 @@ class DropdownSettings extends Component {
       this.activity = option.label
       this.metric = this.props.metric
       this.props.updateActivity(this.activity)
-      if(this.activity == 'Swim' && this.metric == 'height'){
+      if(this.activity === 'Swim' && this.metric === 'height'){
         console.log('invalid combo')
         this.props.updateMetric('distance')        
       }        
@@ -68,7 +68,7 @@ function findOptionSet(options, newActivity, newMetric){
       newOptionSet = activityOptions;
       break;
     case 'metric':
-      if(newActivity == 'Swim'){
+      if(newActivity === 'Swim'){
         newOptionSet = swimMetricOptions;
       }else{
         newOptionSet = metricOptions;
