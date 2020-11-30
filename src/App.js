@@ -5,12 +5,13 @@ import './App.css';
 import 'react-dropdown/style.css';
 import Selection from './selection';
 import AuthButton from './authButton';
-import {getTokens, readCodeAndScope} from './strava';
+import { readCodeAndScope} from './strava';
+import { getToken } from './backend';
 
 function App() {
   var authInfo = readCodeAndScope();
   if(!authInfo.error)
-    getTokens(authInfo.code);
+  getToken(authInfo.code);
   return (
     <div className="App">
       <h>

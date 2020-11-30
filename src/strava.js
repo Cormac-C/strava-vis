@@ -14,29 +14,6 @@ export  function readCodeAndScope(){
     return response;
 }
 
-export async function getTokens (code){ //Doesn't support getting token thorugh JS, CORS issue.
-    fetch("https://www.strava.com/oauth/token" + 
-    new URLSearchParams(
-        {client_id: process.env.REACT_APP_CLIENT_ID,
-        client_secret: process.env.REACT_APP_CLIENT_SECRET,
-        code,
-        grant_type: 'authorization_code'
-        }),{
-        "method": "POST",
-        "credentials": "include",
-        "headers": {
-            'Connection': 'close',
-            'Accept': 'application/json',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Content-Type': 'application/json',
-        },
-    }
-    ).then(response => response.json())
-    .then(response => {
-        console.log(response);
-    })
-}
-
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
