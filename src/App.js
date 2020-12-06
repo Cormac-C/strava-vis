@@ -3,15 +3,18 @@ import './style.css';
 import './App.css';
 
 import 'react-dropdown/style.css';
-import Selection from './selection';
-import AuthButton from './authButton';
+import Selection from './components/selection';
+import AuthButton from './components/authButton';
 import { readCodeAndScope} from './strava';
-import { getToken } from './backend';
+import { getAthlete } from './utils/backend';
 
 function App() {
   var authInfo = readCodeAndScope();
   if(!authInfo.error)
-  getToken(authInfo.code);
+    var stats = getAthlete(authInfo.code);
+  // var token = getToken(authInfo.code);
+  // if(!token.access_token)
+  //   var athlete = getAthleteStats(token.athlete.id, token.access_token);
   return (
     <div className="App">
       <h>
