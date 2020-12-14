@@ -27,7 +27,6 @@ function App() {
         <div>
           <Switch>
             <Route path="/select">
-              <h>Select</h>
               <Select />
             </Route>
             <Route path="/charts">

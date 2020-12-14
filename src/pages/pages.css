@@ -19,23 +19,3 @@ p {
   line-height: 42px;
   text-align: left;
 }
-
-Button {
-  background-color: #fff0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  border-color: rgb(0, 0, 0) !important;
-  border-radius: 15px !important;
-}
-
-Button :hover {
-  background-color: #fc4d026e !important;
-  padding: 0 !important;
-  border: 0.5 !important;
-  border-color: rgb(255, 255, 255) !important;
-  border-radius: 15px !important;
-}
-
-Button img {
-  border-radius: 15px !important;
-}

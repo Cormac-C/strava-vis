@@ -2,6 +2,7 @@ import React from "react";
 import "./pages.css";
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import { authSignIn } from "../utils/strava";
+import AuthButton from "../components/authButton";
 
 export default function Home() {
   return (
@@ -15,13 +16,7 @@ export default function Home() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore.
             </p>
-            <Button>
-              <Image
-                src="btn_strava_connectwith_orange@2x.png"
-                alt="Charts Graphic"
-                onClick={() => authSignIn()}
-              ></Image>
-            </Button>
+            <AuthButton />
           </Col>
           <Col sm>
             <Image src="charts.svg" alt="Charts Graphic" fluid></Image>

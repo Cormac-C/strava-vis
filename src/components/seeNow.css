@@ -1,0 +1,29 @@
+.seeNow Button {
+  background-color: #a03e99;
+  border-color: #a03e99;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 2.5rem !important;
+  line-height: 56px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.seeNow Button:hover {
+  background-color: #7a2f75 !important;
+  border-color: #7a2f75;
+}
+
+.seeNow Button:active {
+  background-color: #7a2f75 !important;
+  border-color: #7a2f75 !important;
+}
+
+.seeNow Button:focus {
+  background-color: #7a2f75 !important;
+  border-color: #7a2f75 !important;
+}
+
+.seeNow img {
+  margin-bottom: 5%;
+}
