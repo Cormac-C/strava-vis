@@ -1,13 +1,13 @@
 import React from "react";
 import "./pages.css";
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
-import ".././charts.svg";
+import { authSignIn } from "../utils/strava";
 
 export default function Home() {
   return (
-    <div vertical-align-middle>
-      <Container align-middle>
-        <Row align-middle>
+    <div>
+      <Container>
+        <Row>
           <Col sm>
             <h1>Run Wrap Up</h1>
             <p>
@@ -15,7 +15,13 @@ export default function Home() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore.
             </p>
-            <Button>Link to Strava</Button>
+            <Button>
+              <Image
+                src="btn_strava_connectwith_orange@2x.png"
+                alt="Charts Graphic"
+                onClick={() => authSignIn()}
+              ></Image>
+            </Button>
           </Col>
           <Col sm>
             <Image src="charts.svg" alt="Charts Graphic" fluid></Image>
