@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {authSignIn} from '../strava'
+import {authSignIn} from '../utils/strava'
 
 export default class AuthButton extends Component {
     render(){

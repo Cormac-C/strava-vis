@@ -23,7 +23,8 @@ pre code {
   padding: 8px 0;
 } */
 
-.arrow-closed, .arrow-open {
+.arrow-closed,
+.arrow-open {
   border: solid #999;
   border-width: 0 2px 2px 0;
   display: inline-block;
@@ -70,14 +71,14 @@ pre code {
   border-color: #999 transparent transparent;
   border-style: solid;
   border-width: 5px 5px 0;
-  content: ' ';
+  content: " ";
   display: block;
   height: 0;
   margin-top: -ceil(2.5);
   position: absolute;
   right: 10px;
   top: 14px;
-  width: 0
+  width: 0;
 }
 
 .is-open .Dropdown-arrow {
@@ -117,7 +118,7 @@ pre code {
 
 .Dropdown-option:last-child {
   border-bottom-right-radius: 2px;
-   border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 .Dropdown-option:hover {
@@ -144,6 +145,6 @@ pre code {
   color: purple;
 }
 
-#selection .row{
+#selection .row {
   display: flex;
 }
