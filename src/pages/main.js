@@ -6,7 +6,7 @@ import AuthButton from "../components/authButton";
 
 export default function Home() {
   return (
-    <div>
+    <div className="main">
       <Container>
         <Row>
           <Col sm>

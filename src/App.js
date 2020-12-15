@@ -30,7 +30,6 @@ function App() {
               <Select />
             </Route>
             <Route path="/charts">
-              <h>Charts</h>
               <Charts />
             </Route>
             <Route path="/">
