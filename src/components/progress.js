@@ -15,7 +15,7 @@ export default class Progress extends Component {
       <div className="graphic">
         <Row>
           <Col>
-            <Ring radius="155.625" percentage={decimal}></Ring>
+            <Ring radius="175" percentage={decimal}></Ring>
             <h1>{progress}</h1>
           </Col>
         </Row>
