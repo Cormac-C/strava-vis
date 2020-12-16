@@ -1,7 +1,6 @@
 import React from "react";
 import "./pages.css";
-import { Container, Row, Col, Button, Image } from "react-bootstrap";
-import { authSignIn } from "../utils/strava";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import AuthButton from "../components/authButton";
 
 export default function Home() {
