@@ -7,7 +7,7 @@ export function authSignIn() {
 }
 
 export function seeNow() {
-  console.log("Redirect to Strava login");
+  console.log("Redirect to Charts");
   window.open("http://localhost:3000/charts", "_self");
 }
 
@@ -18,7 +18,6 @@ export function readCodeAndScope() {
     response.code = getUrlParameter("code");
     response.scope = getUrlParameter("scope");
   }
-  console.log(response);
   return response;
 }
 
