@@ -6,11 +6,6 @@ export function authSignIn() {
   );
 }
 
-export function seeNow() {
-  console.log("Redirect to Charts");
-  window.open("http://localhost:3000/charts", "_self");
-}
-
 export function readCodeAndScope() {
   let response = {};
   response.error = getUrlParameter("error");

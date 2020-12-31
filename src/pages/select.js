@@ -17,7 +17,7 @@ export default function Select() {
       updateToken();
     }
   }, []);
-
+  console.log("Token", token);
   return (
     <div>
       <Container>
@@ -36,7 +36,7 @@ export default function Select() {
         </Row>
         <Row>
           <Col>
-            <SeeNow />
+            <SeeNow token={token} />
           </Col>
         </Row>
       </Container>

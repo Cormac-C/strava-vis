@@ -3,14 +3,26 @@ import "./pages.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Greeting from "../components/greeting.js";
 import Progress from "../components/progress.js";
+import { BrowserRouter as Router, Switch, useLocation } from "react-router-dom";
 
 export default function Charts() {
+  const location = useLocation();
+  console.log("location", location);
+  const token = location.state.token;
   return (
     <div>
       <Container>
         <Row>
           <Col>
-            <Greeting name="Sidney" activity="ran" metric="as far as" />
+            <Greeting
+              name={
+                token && token.hasOwnProperty("athlete")
+                  ? token.athlete.firstname
+                  : "Sidney"
+              }
+              activity="ran"
+              metric="as far as"
+            />
           </Col>
         </Row>
         <Row>
