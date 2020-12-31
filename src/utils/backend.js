@@ -20,10 +20,10 @@ export async function getToken(userCode, setToken, setUserName) {
   }
 }
 
-export async function getAthleteStats(athleteId, authToken) {
+export async function getAthleteStats(athleteId, authToken, setAthleteStats) {
   console.log("Getting stats for athlete: ", athleteId);
   const beUrl = "http://localhost:9000/strava/";
-  const auth = "Bearer" + authToken;
+  const auth = "Bearer " + authToken;
   try {
     await fetch(beUrl + "stats/" + athleteId, {
       method: "GET",
@@ -38,7 +38,7 @@ export async function getAthleteStats(athleteId, authToken) {
       .then((response) => response.json())
       .then((response) => {
         //console.log(response);
-        return response;
+        setAthleteStats(response);
       });
   } catch (error) {
     //console.log(error);

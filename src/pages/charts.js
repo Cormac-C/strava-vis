@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./pages.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Greeting from "../components/greeting.js";
 import Progress from "../components/progress.js";
 import { BrowserRouter as Router, Switch, useLocation } from "react-router-dom";
+import { getAthleteStats } from "../utils/backend";
 
 export default function Charts() {
+  const [athleteStats, setAthleteStats] = useState(null);
   const location = useLocation();
   console.log("location", location);
   const token = location.state.token;
+  useEffect(() => {
+    if (token) {
+      async function updateStats() {
+        await getAthleteStats(
+          token.athlete.id,
+          token.access_token,
+          setAthleteStats
+        );
+      }
+      updateStats();
+    }
+  }, []);
   return (
     <div>
       <Container>
@@ -29,22 +43,34 @@ export default function Charts() {
           <Col>
             <Progress
               constantName="Yonge-University Subway Lines"
-              constant="1500"
-              value="7070"
+              constant="38800"
+              value={
+                athleteStats && athleteStats.hasOwnProperty("ytd_run_totals")
+                  ? athleteStats.ytd_run_totals.distance
+                  : 0
+              }
             ></Progress>
           </Col>
           <Col>
             <Progress
               constantName="Lengths of PEI"
-              constant="14"
-              value="32"
+              constant="225000"
+              value={
+                athleteStats && athleteStats.hasOwnProperty("ytd_run_totals")
+                  ? athleteStats.ytd_run_totals.distance
+                  : 0
+              }
             ></Progress>
           </Col>
           <Col>
             <Progress
               constantName="Marathons"
-              constant="26.2"
-              value="340.6"
+              constant="42195"
+              value={
+                athleteStats && athleteStats.hasOwnProperty("ytd_run_totals")
+                  ? athleteStats.ytd_run_totals.distance
+                  : 0
+              }
             ></Progress>
           </Col>
         </Row>
