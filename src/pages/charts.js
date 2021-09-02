@@ -3,7 +3,7 @@ import "./pages.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Greeting from "../components/greeting.js";
 import Progress from "../components/progress.js";
-import { BrowserRouter as Router, Switch, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { getAthleteStats } from "../utils/backend";
 
 export default function Charts() {
