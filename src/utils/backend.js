@@ -1,5 +1,5 @@
 export async function getToken(userCode, setToken, setUserName) {
-  const beUrl = "http://localhost:9000/strava/";
+  const beUrl = "https://fast-sands-44797.herokuapp.com/strava/";
   try {
     await fetch(beUrl + "token/" + userCode, {
       method: "GET",
@@ -22,7 +22,7 @@ export async function getToken(userCode, setToken, setUserName) {
 
 export async function getAthleteStats(athleteId, authToken, setAthleteStats) {
   console.log("Getting stats for athlete: ", athleteId);
-  const beUrl = "http://localhost:9000/strava/";
+  const beUrl = "https://fast-sands-44797.herokuapp.com/strava/";
   const auth = "Bearer " + authToken;
   try {
     await fetch(beUrl + "stats/" + athleteId, {
