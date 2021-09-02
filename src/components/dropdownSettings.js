@@ -44,7 +44,6 @@ class DropdownSettings extends Component {
       this.metric = this.props.metric
       this.props.updateActivity(this.activity)
       if(this.activity === 'Swim' && this.metric === 'height'){
-        console.log('invalid combo')
         this.props.updateMetric('distance')        
       }        
     }

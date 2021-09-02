@@ -17,7 +17,6 @@ export default function Select() {
       updateToken();
     }
   }, []);
-  console.log("Token", token);
   return (
     <div>
       <Container>

@@ -11,7 +11,6 @@ export default function Charts() {
   const location = useLocation();
   const token = location.state.token;
   useEffect(() => {
-    console.log(token)
     if (token) {
       async function updateStats() {
         await getAthleteStats(
