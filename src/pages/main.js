@@ -12,8 +12,6 @@ export default function Home() {
             <h1>Run Wrap Up</h1>
             <p>
               Connect to Strava and see your exercise in a brand new light.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore.
             </p>
             <AuthButton />
           </Col>
