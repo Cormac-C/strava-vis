@@ -9,9 +9,9 @@ import { getAthleteStats } from "../utils/backend";
 export default function Charts() {
   const [athleteStats, setAthleteStats] = useState(null);
   const location = useLocation();
-  console.log("location", location);
   const token = location.state.token;
   useEffect(() => {
+    console.log(token)
     if (token) {
       async function updateStats() {
         await getAthleteStats(
@@ -22,7 +22,7 @@ export default function Charts() {
       }
       updateStats();
     }
-  }, []);
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
       <Container>

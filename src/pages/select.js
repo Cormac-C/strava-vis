@@ -8,8 +8,8 @@ import { getToken } from "../utils/backend";
 
 export default function Select() {
   const [token, setToken] = useState(null);
-  let urlParams = readCodeAndScope();
   useEffect(() => {
+    let urlParams = readCodeAndScope();
     if (urlParams && !urlParams.error) {
       async function updateToken() {
         await getToken(urlParams.code, setToken);
